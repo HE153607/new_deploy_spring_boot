@@ -1,0 +1,23 @@
+server:
+  port: 8899
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=test;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: anh123
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+minio:
+  bucket:
+    name: minio-example-demo
+  access:
+    key: minioadmin
+    secret: minioadmin
+      

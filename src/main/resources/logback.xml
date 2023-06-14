@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+<!--    logging.pattern.console=%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n
+ có thể thay thế cho toàn bộ file này bằng cấu hình này trong file properties
+bằng-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%yellow(%d{HH:mm:ss.SSS}) [%blue(%thread)] %highlight(%-5level) %green(%logger{36}) - %msg%n</pattern>
+        </layout>
+<!-- hoac co the dung:<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--            <pattern>%white(%d{HH:mm:ss.SSS}) [%blue(%thread)] %highlight(%-5level) %green(%logger{36}) - %msg%n</pattern>-->
+<!--        </encoder>-->
+    </appender>
+    <logger name="com.boyka.demo" additivity="true"  level="debug" />
+    <root level="info">
+        <appender-ref ref="console" />
+    </root>
+    <!-- activate write log in console else nothing to show up-->
+<!--    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter">-->
+<!--        <level value="DEBUG" />-->
+<!--    </logger>-->
+<!--    attribute: additivity="false" prevent forward log at com.boyka.demo to logger parent(org.slf4j.Logger) -->
+</configuration>
